@@ -1,9 +1,9 @@
+use super::*;
 use crate::accounts::{
     derive_tracking_address, derive_tracking_orca_dd_queue_address, derive_tracking_pda_address,
     derive_tracking_queue_address,
 };
-
-use super::*;
+use anchor_spl::associated_token as spl_associated_token_account;
 
 pub struct DepositTrackingConfig {
     pub tracking_account: Pubkey,

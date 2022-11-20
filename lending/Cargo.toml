@@ -10,16 +10,17 @@ documentation = "https://docs.rs/tulipv2-sdk-vaults"
 readme = "../README.md"
 
 [dependencies]
-solana-program = "1.9.13"
-spl-token = "3.2.0"
-tulipv2-sdk-common = {path = "../common", version = "0.9.21"}
-itertools = "0.10.3"
+anchor-lang = "=0.25.0"
+anchor-spl = "=0.25.0"
+tulipv2-sdk-common = { path = "../common" }
+itertools = "0.10.5"
 num-derive = "0.3"
 thiserror = "1.0"
 num-traits = "0.2"
+
 [dev-dependencies]
 proptest = "1.0.0"
-solana-client = "1.9.13"
+anchor-client = "=0.25.0"
 data-encoding = "2.3.2"
 ring = "0.16.20"
 type-layout = "0.2.0"

@@ -6,9 +6,12 @@ use crate::config::deposit_tracking::derivations::{
     derive_tracking_address, derive_tracking_pda_address, derive_tracking_queue_address,
 };
 use crate::config::ID;
-use anchor_lang::prelude::Pubkey;
+use anchor_lang::{
+    prelude::Pubkey,
+    solana_program::{instruction::AccountMeta, instruction::Instruction, system_program, sysvar},
+};
+use anchor_spl::{associated_token as spl_associated_token_account, token::spl_token};
 use sighashdb::GlobalSighashDB;
-use solana_program::{instruction::AccountMeta, instruction::Instruction, system_program, sysvar};
 
 #[derive(Clone, Debug, Default)]
 pub struct RegisterDepositTrackingAddresses {

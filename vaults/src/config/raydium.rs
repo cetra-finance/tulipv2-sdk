@@ -6,7 +6,10 @@ use crate::accounts::{
 
 use anchor_lang::solana_program::instruction::Instruction;
 use anchor_lang::solana_program::pubkey::Pubkey;
-use tulipv2_sdk_common::config::deposit_tracking::issue_shares::{DepositAddresses, DepositAddressesPermissioned};
+use anchor_spl::associated_token as spl_associated_token_account;
+use tulipv2_sdk_common::config::deposit_tracking::issue_shares::{
+    DepositAddresses, DepositAddressesPermissioned,
+};
 use tulipv2_sdk_common::config::deposit_tracking::register::RegisterDepositTrackingAddresses;
 use tulipv2_sdk_common::config::deposit_tracking::traits::{
     IssueShares, RegisterDepositTracking, WithdrawDepositTracking,
@@ -95,7 +98,7 @@ impl RaydiumVaultConfig {
             self.vault,
             self.pda,
             self.shares_mint,
-            self.underlying_mint
+            self.underlying_mint,
         )
     }
     pub fn withdraw_deposit_tracking(&self, authority: Pubkey) -> impl WithdrawDepositTracking {

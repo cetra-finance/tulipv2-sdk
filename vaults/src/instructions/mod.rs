@@ -5,6 +5,7 @@ use anchor_lang::{
     prelude::*,
     solana_program::{instruction::Instruction, system_program, sysvar},
 };
+use anchor_spl::token::spl_token;
 use sighashdb::GlobalSighashDB;
 use tulipv2_sdk_farms::Farm;
 pub mod atrix;
@@ -85,5 +86,5 @@ pub fn new_permissioned_issue_shares_ix(
             AccountMeta::new(spl_token::id(), false),
         ],
         data: ix_data,
-    })   
+    })
 }

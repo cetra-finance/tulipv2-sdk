@@ -1,10 +1,11 @@
-use solana_program::{
+use anchor_lang::solana_program::{
     instruction::{AccountMeta, Instruction},
     msg,
     program_error::ProgramError,
     pubkey::{Pubkey, PUBKEY_BYTES},
     sysvar,
 };
+use anchor_spl::token::spl_token;
 use std::mem::size_of;
 use tulipv2_sdk_common::lending::error::LendingError;
 

@@ -8,6 +8,7 @@ use crate::accounts::{
 };
 
 use anchor_lang::solana_program::pubkey::Pubkey;
+use anchor_spl::associated_token as spl_associated_token_account;
 
 use super::VaultBaseConfig;
 
@@ -92,7 +93,6 @@ impl QuarrySunnyVaultConfig {
             sunny_tvault_internal_token_account,
         }
     }
-    
 }
 
 impl QuarrySaberVaultConfig {

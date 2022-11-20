@@ -1,4 +1,4 @@
-use solana_program::{self, pubkey::Pubkey};
+use anchor_lang::solana_program::{self, pubkey::Pubkey};
 use static_pubkey::static_pubkey;
 
 pub const ACCOUNT: Pubkey = static_pubkey!("3gmxqqfQhMtqAnQWuFNiTqgLkAok54SGuvdncPYEAq2i");

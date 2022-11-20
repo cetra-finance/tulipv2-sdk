@@ -1,6 +1,6 @@
 //! helper functions used to cpi to the lending program
 
-use solana_program::{account_info::AccountInfo, program_error::ProgramError};
+use anchor_lang::solana_program::{self, account_info::AccountInfo, program_error::ProgramError};
 
 /// creates, and invokes a reserve refresh instruction
 pub fn refresh_reserve<'info>(

@@ -6,11 +6,13 @@ use super::{
     traits::IssueShares,
 };
 use crate::config::ID;
-use anchor_lang::solana_program::pubkey::Pubkey;
+use anchor_lang::solana_program::{
+    instruction::{AccountMeta, Instruction},
+    pubkey::Pubkey,
+};
 use anchor_lang::AnchorSerialize;
+use anchor_spl::{associated_token as spl_associated_token_account, token::spl_token};
 use sighashdb::GlobalSighashDB;
-use solana_program::instruction::AccountMeta;
-use solana_program::instruction::Instruction;
 
 use tulipv2_sdk_farms::Farm;
 
@@ -90,7 +92,8 @@ impl DepositAddressesPermissioned {
         // deposit ata for the user
         let depositing_underlying_account =
             spl_associated_token_account::get_associated_token_address(&user, &underlying_mint);
-        let receiving_shares_account = spl_associated_token_account::get_associated_token_address(&user, &shares_mint);
+        let receiving_shares_account =
+            spl_associated_token_account::get_associated_token_address(&user, &shares_mint);
         let vault_underlying_account = spl_associated_token_account::get_associated_token_address(
             &vault_pda,
             &underlying_mint,
@@ -182,8 +185,6 @@ impl IssueShares for DepositAddresses {
         ]
     }
 }
-
-
 
 impl IssueShares for DepositAddressesPermissioned {
     fn authority(&self) -> Pubkey {

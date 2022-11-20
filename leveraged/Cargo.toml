@@ -8,6 +8,25 @@ keywords = ["solana", "anchor", "tulip-protocol"]
 license = "MIT/Apache-2.0"
 documentation = "https://docs.rs/tulipv2-sdk-vaults"
 readme = "../README.md"
+
+[dependencies]
+tulipv2-sdk-common = { path = "../common" }
+itertools = "0.10.5"
+num-derive = "0.3"
+thiserror = "1.0"
+num-traits = "0.2"
+anchor-lang = "=0.25.0"
+anchor-spl = "=0.25.0"
+static-pubkey = "1.0.3"
+sighashdb = "0.1.39"
+
+[dev-dependencies]
+proptest = "1.0.0"
+anchor-client = "=0.25.0"
+data-encoding = "2.3.2"
+ring = "0.16.20"
+type-layout = "0.2.0"
+
 [features]
 default = [
     "orca-orcausdc-levfarm",
@@ -99,20 +118,3 @@ ray-btcstsol-levfarm = []
 ray-msolusdt-levfarm = []
 ray-starsusdc-levfarm = []
 ray-prismusdc-levfarm = []
-[dependencies]
-solana-program = "1.9.13"
-spl-token = "3.2.0"
-tulipv2-sdk-common = {path = "../common", version = "0.9.21"}
-itertools = "0.10.3"
-num-derive = "0.3"
-thiserror = "1.0"
-num-traits = "0.2"
-anchor-lang = "0.24.2"
-static-pubkey = "1.0.2"
-sighashdb = "0.1.39"
-[dev-dependencies]
-proptest = "1.0.0"
-solana-client = "1.9.13"
-data-encoding = "2.3.2"
-ring = "0.16.20"
-type-layout = "0.2.0"

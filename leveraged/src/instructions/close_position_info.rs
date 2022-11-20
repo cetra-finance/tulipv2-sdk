@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
+use anchor_lang::solana_program::instruction::Instruction;
 use sighashdb::GlobalSighashDB;
-use solana_program::instruction::Instruction;
 
 #[derive(Accounts)]
 pub struct ClosePositionInfoAccount<'info> {

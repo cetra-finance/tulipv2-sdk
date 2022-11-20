@@ -1,5 +1,4 @@
-use anchor_lang::prelude::*;
-use solana_program::instruction::Instruction;
+use anchor_lang::{prelude::*, solana_program::instruction::Instruction};
 use tulipv2_sdk_farms::Farm;
 
 /// The `IssueShares` trait is used to deposit into all v2 vaults regardless of their type,

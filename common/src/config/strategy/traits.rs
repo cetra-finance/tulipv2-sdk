@@ -1,7 +1,6 @@
 //! traits which are exclusive to the lending optimizer vaults
 
-use anchor_lang::prelude::*;
-use solana_program::instruction::Instruction;
+use anchor_lang::{prelude::*, solana_program::instruction::Instruction};
 use tulipv2_sdk_farms::Farm;
 
 use super::Platform;

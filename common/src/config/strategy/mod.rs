@@ -63,9 +63,11 @@ impl StrategyVaults {
 }
 
 /// given address `vault`, return the corresponding multi deposit vault configuration trait.
-/// 
+///
 /// returns None if the vault is not a strategy vault
-pub fn get_multi_deposit_vault_config(vault: anchor_lang::solana_program::pubkey::Pubkey) -> Option<Box<dyn MultiVaultProgramConfig>> {
+pub fn get_multi_deposit_vault_config(
+    vault: anchor_lang::solana_program::pubkey::Pubkey,
+) -> Option<Box<dyn MultiVaultProgramConfig>> {
     match vault {
         usdc::multi_deposit::ACCOUNT => Some(StrategyVaults::USDCv1.multi_deposit_config()),
         sol::multi_deposit::ACCOUNT => Some(StrategyVaults::SOLv1.multi_deposit_config()),
@@ -83,7 +85,6 @@ mod test {
     #[test]
     fn test_sol_multi_deposit_config() {
         let conf = get_multi_deposit_vault_config(sol::multi_deposit::ACCOUNT).unwrap();
-
 
         assert_eq!(conf.account(), sol::multi_deposit::ACCOUNT);
         assert_eq!(conf.pda(), sol::multi_deposit::PDA);

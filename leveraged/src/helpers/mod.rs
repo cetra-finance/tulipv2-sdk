@@ -15,6 +15,7 @@ use crate::{
 use super::*;
 use crate::instructions::{create_user_farm, create_user_farm_obligation};
 use anchor_lang::prelude::*;
+use anchor_spl::token::spl_token;
 use solana_program::{instruction::Instruction, system_program, sysvar};
 use tulipv2_sdk_common::{
     config::levfarm::{LevFarmConfig, LENDING_PROGRAM},

@@ -31,7 +31,7 @@ mod test {
     use std::str::FromStr;
 
     use anchor_client::solana_client::rpc_client::RpcClient;
-    use solana_program::account_info::IntoAccountInfo;
+    use anchor_lang::solana_program::account_info::IntoAccountInfo;
 
     use super::*;
     #[test]

@@ -1,7 +1,7 @@
 //! a base vault component providing tokenized shares, as well as pausable deposits / withdraws
 
 use anchor_lang::prelude::*;
-use anchor_spl::token::Mint;
+use anchor_spl::token::{spl_token, Mint};
 
 use tulip_arrform::{arrform, ArrForm};
 #[cfg(not(target_arch = "bpf"))]
